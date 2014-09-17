@@ -1,14 +1,14 @@
 {
-  "name": "better-scrollorama",
+  "name": "jotform-knob",
   "version": "0.0.1",
-  "description": "Better Scrollorama",
+  "description": "jotform-knob",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blockhead123/better-scrollorama"
+    "url": "https://github.com/blockhead123/jQuery-Knob"
   },
   "author": "oliver ong",
   "license": "ISC",

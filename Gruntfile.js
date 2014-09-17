@@ -3,36 +3,55 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         replace: {
-            example: {
-                src: ['src/basic/index.html'],             // source files array (supports minimatch)
-                dest: 'dist/basic/',             // destination directory or file
+            dist: {
+                src: ['src/index.html'],             // source files array (supports minimatch)
+                dest: 'dist/',             // destination directory or file
                 replacements: [{
-                    from: 'better-scrollorama.js',                   // string replacement
-                    to: 'better-scrollorama.min.js'
+                    from: 'jotform-knob.js',                   // string replacement
+                    to: 'jotform-knob.min.js'
                 },{
-                    from: 'better-scrollorama.css',                   // string replacement
-                    to: 'better-scrollorama.min.css'
-                }]
+                    from: 'jotform-knob.css',                   // string replacement
+                    to: 'jotform-knob.min.css'
+                },
+                {
+                    from: 'http://jotform-widget-knob.zholpe.com/src/',
+                    to: 'http://jotform-widget-knob.zholpe.com/dist/'
+                }
+                ]
+            }
+        },
+        concat: {
+            options: {
+                separator: ';'
+            },
+            src: {
+                src: ['lib/jQuery-Kob/dist/jquery.knob.min.js'],
+                dest: 'dist/js/jquery.knob.min.js'
+            },
+            dist: {
+                src: ['lib/jQuery-Kob/dist/jquery.knob.min.js'],
+                dest: 'src/js/jquery.knob.min.js'
             }
         },
         uglify: {
             dist: {
                 files: {
-                    'dist/basic/js/bvs.min.js': ['src/basic/js/better-scrollorama.js']
+                    'dist/js/jotform-knob.min.js': ['src/js/jotform-knob.js']
                 }
             }
         },
         cssmin : {
             styles: {
-                src: ['src/basic/css/better-scrollorama.css'],
-                dest: 'dist/basic/css/better-scrollorama.min.css'
+                src: ['src/css/jotform-knob.css'],
+                dest: 'dist/css/jotform-knob.min.css'
             }
         }
     });
     grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['replace', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['concat', 'replace', 'uglify', 'cssmin']);
 
 };
