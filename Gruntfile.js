@@ -7,11 +7,11 @@ module.exports = function(grunt) {
                 src: ['src/index.html'],             // source files array (supports minimatch)
                 dest: 'dist/',             // destination directory or file
                 replacements: [{
-                    from: 'jotform-knob.js',                   // string replacement
-                    to: 'jotform-knob.min.js'
+                    from: 'jotform.knob.js',                   // string replacement
+                    to: 'jotform.knob.min.js'
                 },{
-                    from: 'jotform-knob.css',                   // string replacement
-                    to: 'jotform-knob.min.css'
+                    from: 'jotform.knob.css',                   // string replacement
+                    to: 'jotform.knob.min.css'
                 },
                 {
                     from: 'http://jotform-widget-knob.zholpe.com/src/',
@@ -28,14 +28,14 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    'dist/js/jotform-knob.min.js': ['src/js/jotform-knob.js']
+                    'dist/js/jotform.knob.min.js': ['src/js/jotform.knob.js']
                 }
             }
         },
         cssmin : {
             styles: {
-                src: ['src/css/jotform-knob.css'],
-                dest: 'dist/css/jotform-knob.min.css'
+                src: ['src/css/jotform.knob.css'],
+                dest: 'dist/css/jotform.knob.min.css'
             }
         }
     });
