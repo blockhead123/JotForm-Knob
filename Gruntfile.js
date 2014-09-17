@@ -23,14 +23,6 @@ module.exports = function(grunt) {
         concat: {
             options: {
                 separator: ';'
-            },
-            src: {
-                src: ['lib/jQuery-Kob/dist/jquery.knob.min.js'],
-                dest: 'dist/js/jquery.knob.min.js'
-            },
-            dist: {
-                src: ['lib/jQuery-Kob/dist/jquery.knob.min.js'],
-                dest: 'src/js/jquery.knob.min.js'
             }
         },
         uglify: {
